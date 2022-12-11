@@ -1,0 +1,47 @@
+<%- include('src/head'); -%>
+<div class="main">
+    
+    <link rel="stylesheet" href="/style/st2.css" />
+
+    <div class="cpanel">
+        <div class="cpanel__head">Thêm Bài Viết</div>
+        <div class="cpanel_form">
+            <form method="post" action="/posts">
+                <div class="form__e">
+                    <div class="form__label">Tên bài:</div>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="form__e">
+                    <div class="form__label">Chương:</div>
+                    <select id="chapter" name="chapter" >
+                        <% listChapter.forEach(function(chapter,index){ %>
+                            <option value=<%-chapter.id-%> <% if(id_chapter == chapter.id){ %> selected <% } %>>Chương <%-index+1-%>: <%- chapter.title %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form__e">
+                    <%- include('src/bbcode'); -%>
+                    <div class="form__label">Nội dung:</div>
+                    <textarea name="content" id="content"></textarea>
+                </div>
+                <div class="form__e">
+                    <div class="form__button">
+                        <input type="submit" value="Thêm Bài">
+                    </div>
+                
+                </div>
+              </form>
+        </div>
+
+
+    </div>
+    
+<script src="/scripts/script.js">
+   
+</script>
+
+<!-- end div.main  -->
+</div>
+<%- include('src/foot'); -%>
+
+   

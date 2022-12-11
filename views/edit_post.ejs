@@ -1,0 +1,54 @@
+<%- include('src/head'); -%>
+<div class="main">
+    
+    <link rel="stylesheet" href="/style/st2.css" />
+
+    <div class="cpanel">
+        <div class="cpanel__head">Sửa Bài Viết</div>
+        <div class="cpanel_form">
+            <form method="post" action="/posts/<%-post[0].id%>/edit">
+                <div class="form__e">
+                    <div class="form__label">Tên bài:</div>
+                    <input type="text" id="title" name="title" value="<%- post[0].title %>">
+                </div>
+                <div class="form__e">
+                    <div class="form__label">Chương:</div>
+                    <select id="chapter" name="chapter" >
+                        <% listChapter.forEach(function(chapter){ %>
+                            <option value=<%-chapter.id-%> <% if(post[0].chapter == chapter.order){ %> selected <% } %>>Chương <%-chapter.order-%>: <%- chapter.title %></option>
+                        <% }) %>
+                    </select>
+                </div>
+                <div class="form__e">
+                    <div class="form__label">Order*:</div>
+                    <input type="text" id="order" name="order" value="<%- post[0].order %>">
+                </div>
+                <div class="form__e">
+                    <%- include('src/bbcode'); -%>
+                    <div class="form__label">Nội dung:</div>
+                    <textarea name="content" id="content"><%- post[0].content %></textarea>
+                </div>
+                <div class="form__e">
+                    <div class="form__button">
+                        <input type="submit" value="Sửa Bài">
+                    </div>
+                
+                </div>
+                <div class="form__e">
+                    *Order: Giá trị *order càng lớn thì thứ tự hiển thị trong chương càng lớn
+                </div>
+              </form>
+        </div>
+
+
+    </div>
+    
+<script src="/scripts/script.js">
+   
+</script>
+
+<!-- end div.main  -->
+</div>
+<%- include('src/foot'); -%>
+
+   

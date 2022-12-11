@@ -1,0 +1,106 @@
+.quote{
+    width: 100%;
+    /* border: 1px solid black; */
+    box-sizing: border-box; 
+    padding: 0px 20px;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 20px;
+}
+.quote::before{
+    margin-top: -20px;
+    margin-left: -20px;
+    content: "left";
+    color:transparent;
+    background-image: url('/img/quote-left.png');
+    background-repeat: no-repeat;
+}
+.quote::after{
+    margin-left: 100%;
+    margin-top: -100px;
+    content: "right";
+    color:transparent;
+    background-image: url('/img/quote-right.png');
+    background-repeat: no-repeat;
+}
+.quote > p{
+    margin: 0;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.advice,.warning{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px 20px;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+.advice{
+    border: 1px solid #9CD49C;
+    box-shadow: 0px 3px #9CD49C ;
+    background-color: #DFFFDF;
+}
+.warning{
+    border: 1px solid #D89696;
+    box-shadow: 0px 3px #D89696 ;
+    background-color: #FFD6D6;
+}
+.bold-bbcode{
+    font-weight: bolder;
+    font-size: 24px;
+}
+.underline-bbcode{
+    text-decoration: underline;
+}
+.url-bbcode > a:visited{
+    color: rgba(0, 132, 255, 0.719);
+    text-decoration: none;
+}
+.url-bbcode > a:hover{
+    font-weight: bold;
+}
+.url-bbcode > a:link{
+    color: rgb(0, 132, 255);
+    text-decoration: none;
+}
+.img-bbcode{
+    text-align: center;
+}
+.inline-code{
+    background-color: #E6E6E6;
+    box-shadow: 0px 3px #D4D4D4;
+    padding: 0px 5px;
+    border-radius: 5px;
+    color: #777777;
+}
+.block-code{
+     margin-top: 10px;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: black; 
+}
+.code{
+    margin-left: 30px;
+}
+.keyword{
+    color: blue;
+}
+.string{
+    color: red;
+}
+.comment{
+    color: green;
+}
+.list__bbcode{
+
+}

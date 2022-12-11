@@ -1,0 +1,9 @@
+<%- include('src/head'); -%>
+    <div class="main">
+        <% list.forEach(function(chap,index){ %>
+        <%- include('src/chapter',{chap,index}); -%>
+        <% }) %>
+    </div>
+<%- include('src/foot'); -%>
+
+           

@@ -1,0 +1,29 @@
+<%- include('src/head'); -%>
+<div class="main">
+    
+    <link rel="stylesheet" href="/style/st2.css" />
+
+    <div class="cpanel">
+        <div class="cpanel__head">Thêm Chương</div>
+        <div class="cpanel_form">
+            <form method="post" action="/chapters">
+                <div class="form__e">
+                    <div class="form__label">Tên Chương:</div>
+                    <input type="text" id="title" name="title">
+                </div>
+                <div class="form__e">
+                    <div class="form__button">
+                        <input type="submit" value="Thêm Chương">
+                    </div>
+                
+                </div>
+              </form>
+        </div>
+
+
+    </div>
+<!-- end div.main  -->
+</div>
+<%- include('src/foot'); -%>
+
+   

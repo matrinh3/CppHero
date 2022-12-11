@@ -1,0 +1,51 @@
+<%- include('src/head'); -%>
+<link rel="stylesheet" href="/style/st3.css" />
+<div class="main">
+            <div class="cpanel__list__title">
+                <a href="/cpanel"><font color="red">[Cpanel]</font></a> <%-titleChapter-%>
+            </div>
+            <div class="cpanel__list__container">
+                
+                <% getListPosts.forEach((post,index)=>{ %>
+                    
+                <div class="cpanel__list__item">
+                    <div class="item__stt">
+                        <%- index+1 -%>
+                    </div>
+                    <div class="item__title">
+                        <a href="/posts/<%-post.id-%>">
+                            <%if(post.shown==0){ %>
+                                <font color="red">
+                            <% } %>
+                        <%- post.title -%>
+                        <%if(post.shown==0){ %>
+                        </font>
+                        <% } %>
+                        </a>
+                    </div>
+                    <div class="item__menu">
+                        <div class="item__menu__box">
+                            <a href="/cpanel/edit_post/<%-post.id-%>"><img src="/img/edit.png" width="20px"></a>
+                            
+                            <%if(post.shown==1){ %> 
+                            <a href="/posts/<%-post.id-%>/unshown"><img src="/img/shown.png" width="20px"></a>
+                            <% } else { %>
+                            <a href="/posts/<%-post.id-%>/shown"><img src="/img/unshown.png" width="20px"></a>
+                            <% } %>
+                            <a href="/posts/<%-post.id-%>/delete?chuong=<%-id-%>"><img src="/img/ic-remove.png" width="20px"></a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            <% }) %>
+
+
+
+            </div>  
+            <div class="cpanel__list__menu">
+                <a href="/cpanel/add_post?chuong=<%-id-%>"><button class="bttadd">Thêm Bài</button></a>
+            </div>
+            
+</div>
+<%- include('src/foot'); -%>

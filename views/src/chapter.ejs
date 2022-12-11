@@ -1,0 +1,19 @@
+<div class="chapter">
+    <div class="chapter__header">
+        <div class="chapter__header__title">
+            <%- chap.title %>
+        </div>
+        <div class="chapter__header__order">Chap <%- index + 1 %></div>
+        
+    </div>
+
+    <% chap.listPosts.forEach(function(post,index){ %> 
+    <div class="post">
+        <div class="post__order"><%= index + 1 %></div>
+        <div class="post__title">
+            <a href="/posts/<%= post.id %>"><%= post.title %></a>
+        </div>
+    </div>
+   <% }); %>
+   
+</div>

@@ -1,0 +1,37 @@
+<%- include('src/head'); -%>
+<div class="main">
+    
+    <link rel="stylesheet" href="/style/st2.css" />
+
+    <div class="cpanel">
+        <div class="cpanel__head">Sửa Bài Viết</div>
+        <div class="cpanel_form">
+            <form method="post" action="/chapters/<%-chap[0].id%>/edit">
+                <div class="form__e">
+                    <div class="form__label">Tên chương:</div>
+                    <input type="text" id="title" name="title" value="<%- chap[0].title %>">
+                </div>
+                <div class="form__e">
+                    <div class="form__label">Order*:</div>
+                    <input type="text" id="order" name="order" value="<%- chap[0].order %>">
+                </div>
+                <div class="form__e">
+                    <div class="form__button">
+                        <input type="submit" value="Sửa Chương">
+                    </div>
+                
+                </div>
+                <div class="form__e">
+                    *Order: Giá trị *order càng lớn thì thứ tự hiển thị càng lớn
+                </div>
+              </form>
+        </div>
+
+
+    </div>
+
+<!-- end div.main  -->
+</div>
+<%- include('src/foot'); -%>
+
+   

@@ -1,0 +1,102 @@
+/posts 
+ + get:   / 
+ + get:   /chapter/:order	params.order
+ + get:   /:id	params.id
+ + delete:   /:id/del	params.id
+ + put:   /:id/update	params.id --- body.chapter --- body.content --- body.title
+ + post:   / body.title --- body.content --- body.chapter
+
+/comments
++ get:     /:id_post	params.id
+
++ delete:     /:id/del	params.id
+
++ put:     /:id/update	params.id --- body.id_user --- body.id_post --- body.content
+
++ post:     /	body.id_user --- body.id_post --- body.content
+
+/chapter
+
++ get: /
++ get: /:order	params.order
++ delete: /:id/del	params.id
++put: /:id/update	params.id --- body.order --- body.title
++post: /	body.order --- body.title
+
+
+home :
++ title chapter + order chapter + title post + id post in chapter
+
+post :
++title post -ok
++content post -ok
++pre post + next post
++comments (name + date + content)
+
+UPDATE `chapter` SET `order` = chapter.order + 1000 WHERE `chapter`.`id` = 1;
+
+
+
+when insert success
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 35,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+fail: throw error
+
+
+when update ok:
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+    "protocol41": true,
+    "changedRows": 1
+}
+
+fail: {
+    "fieldCount": 0,
+    "affectedRows": 0,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "(Rows matched: 0  Changed: 0  Warnings: 0",
+    "protocol41": true,
+    "changedRows": 0
+}
+
+
+
+when delete ok :
+{
+    "fieldCount": 0,
+    "affectedRows": 1,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+
+fail:
+{
+    "fieldCount": 0,
+    "affectedRows": 0,
+    "insertId": 0,
+    "serverStatus": 2,
+    "warningCount": 0,
+    "message": "",
+    "protocol41": true,
+    "changedRows": 0
+}
+
